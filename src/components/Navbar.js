@@ -13,6 +13,7 @@ import MenuItem from "@mui/material/MenuItem";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import { useNotification } from "./NotificationContext";
+import Home from "./Home";
 
 function Navbar({ isLoggedIn, setIsLoggedIn }) {
   const [anchorElNav, setAnchorElNav] = useState(null);
@@ -54,117 +55,120 @@ function Navbar({ isLoggedIn, setIsLoggedIn }) {
   };
 
   return (
-    <AppBar position="fixed">
-      <Container maxWidth="xl">
-        <Toolbar disableGutters>
-          <Link to="/pawwfect-match" sx={{ textDecoration: "none" }}>
+    <>
+      <AppBar position="fixed">
+        <Container maxWidth="xl">
+          <Toolbar disableGutters>
+            <Link to="/pawwfect-match" sx={{ textDecoration: "none" }}>
+              <Typography
+                variant="h6"
+                noWrap
+                component="span"
+                sx={{
+                  mr: 3,
+                  display: { xs: "none", md: "flex" },
+                  fontFamily: "Helvetica",
+                  fontWeight: 900,
+                  letterSpacing: ".1rem",
+                  color: "#fff",
+                  textDecoration: "none",
+                }}
+              >
+                PawwfectMatch
+              </Typography>
+            </Link>
+
+            <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
+              <IconButton
+                size="large"
+                aria-label="account of current user"
+                aria-controls="menu-appbar"
+                aria-haspopup="true"
+                onClick={handleOpenNavMenu}
+                color="inherit"
+              >
+                <MenuIcon />
+              </IconButton>
+              <Menu
+                id="menu-appbar"
+                anchorEl={anchorElNav}
+                anchorOrigin={{
+                  vertical: "bottom",
+                  horizontal: "left",
+                }}
+                keepMounted
+                transformOrigin={{
+                  vertical: "top",
+                  horizontal: "left",
+                }}
+                open={Boolean(anchorElNav)}
+                onClose={handleCloseNavMenu}
+                sx={{
+                  display: { xs: "block", md: "none" },
+                }}
+              >
+                {isLoggedIn && ( // Check if the user is logged in
+                  <MenuItem onClick={handleCloseNavMenu}>
+                    <Link to="/dogsearch">
+                      <Typography textAlign="center">Available Dogs</Typography>
+                    </Link>
+                  </MenuItem>
+                )}
+              </Menu>
+            </Box>
+            <Button sx={{ display: { xs: "flex", md: "none" }, mr: 1 }} />
             <Typography
-              variant="h6"
+              variant="h5"
               noWrap
-              component="span"
+              component="a"
+              href="#app-bar-with-responsive-menu"
               sx={{
-                mr: 3,
-                display: { xs: "none", md: "flex" },
-                fontFamily: "Helvetica",
+                mr: 2,
+                display: { xs: "flex", md: "none" },
+                flexGrow: 1,
+                fontFamily: "monospace",
                 fontWeight: 900,
                 letterSpacing: ".1rem",
-                color: "#fff",
+                color: "inherit",
                 textDecoration: "none",
               }}
             >
               PawwfectMatch
             </Typography>
-          </Link>
-
-          <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
-            <IconButton
-              size="large"
-              aria-label="account of current user"
-              aria-controls="menu-appbar"
-              aria-haspopup="true"
-              onClick={handleOpenNavMenu}
-              color="inherit"
-            >
-              <MenuIcon />
-            </IconButton>
-            <Menu
-              id="menu-appbar"
-              anchorEl={anchorElNav}
-              anchorOrigin={{
-                vertical: "bottom",
-                horizontal: "left",
-              }}
-              keepMounted
-              transformOrigin={{
-                vertical: "top",
-                horizontal: "left",
-              }}
-              open={Boolean(anchorElNav)}
-              onClose={handleCloseNavMenu}
-              sx={{
-                display: { xs: "block", md: "none" },
-              }}
-            >
+            <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
               {isLoggedIn && ( // Check if the user is logged in
                 <MenuItem onClick={handleCloseNavMenu}>
                   <Link to="/dogsearch">
-                    <Typography textAlign="center">Available Dogs</Typography>
+                    <Typography textAlign="center" sx={{ color: "#fff" }}>
+                      Available Dogs
+                    </Typography>
                   </Link>
                 </MenuItem>
               )}
-            </Menu>
-          </Box>
-          <Button sx={{ display: { xs: "flex", md: "none" }, mr: 1 }} />
-          <Typography
-            variant="h5"
-            noWrap
-            component="a"
-            href="#app-bar-with-responsive-menu"
-            sx={{
-              mr: 2,
-              display: { xs: "flex", md: "none" },
-              flexGrow: 1,
-              fontFamily: "monospace",
-              fontWeight: 900,
-              letterSpacing: ".1rem",
-              color: "inherit",
-              textDecoration: "none",
-            }}
-          >
-            PawwfectMatch
-          </Typography>
-          <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
-            {isLoggedIn && ( // Check if the user is logged in
-              <MenuItem onClick={handleCloseNavMenu}>
-                <Link to="/dogsearch">
-                  <Typography textAlign="center" sx={{ color: "#fff" }}>
-                    Available Dogs
-                  </Typography>
-                </Link>
-              </MenuItem>
-            )}
-          </Box>
+            </Box>
 
-          <Box sx={{ flexGrow: 0 }}>
-            {isLoggedIn ? (
-              <Button
-                variant="outlined"
-                sx={{ color: "#fff" }}
-                onClick={handleLogout}
-              >
-                Log out
-              </Button>
-            ) : (
-              <Link to="/signin">
-                <Button variant="outlined" sx={{ color: "#fff" }}>
-                  Log in
+            <Box sx={{ flexGrow: 0 }}>
+              {isLoggedIn ? (
+                <Button
+                  variant="outlined"
+                  sx={{ color: "#fff" }}
+                  onClick={handleLogout}
+                >
+                  Log out
                 </Button>
-              </Link>
-            )}
-          </Box>
-        </Toolbar>
-      </Container>
-    </AppBar>
+              ) : (
+                <Link to="/signin">
+                  <Button variant="outlined" sx={{ color: "#fff" }}>
+                    Log in
+                  </Button>
+                </Link>
+              )}
+            </Box>
+          </Toolbar>
+        </Container>
+      </AppBar>
+      <Home />
+    </>
   );
 }
 export default Navbar;
