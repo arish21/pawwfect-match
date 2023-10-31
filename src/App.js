@@ -4,7 +4,7 @@ import Home from "./components/Home";
 import Navbar from "./components/Navbar";
 import SignInSide from "./components/SignInSide";
 import { useState } from "react";
-import { HashRouter as Router, Route, Routes } from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { NotificationProvider } from "./components/NotificationContext";
 import BreedsList from "./components/BreedsList";
 
