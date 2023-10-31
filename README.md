@@ -2,6 +2,8 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+# NOTE: This Website is not optimized to view in Mobile browsers.
+
 ## Available Scripts
 
 In the project directory, you can run:
