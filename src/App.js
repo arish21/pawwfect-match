@@ -17,7 +17,7 @@ function App() {
       <Router>
         <Navbar isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} />
         <Routes>
-          <Route exact path="/" element={<Home />} />
+          <Route exact path="/pawwfect-match" element={<Home />} />
           <Route
             path="/signin"
             element={

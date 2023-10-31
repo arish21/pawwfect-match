@@ -57,7 +57,7 @@ function Navbar({ isLoggedIn, setIsLoggedIn }) {
     <AppBar position="fixed">
       <Container maxWidth="xl">
         <Toolbar disableGutters>
-          <Link to="/" sx={{ textDecoration: "none" }}>
+          <Link to="/pawwfect-match" sx={{ textDecoration: "none" }}>
             <Typography
               variant="h6"
               noWrap
