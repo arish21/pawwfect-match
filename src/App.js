@@ -14,10 +14,10 @@ function App() {
   );
   return (
     <NotificationProvider>
-      <Router>
+      <Router basename="/pawwfect-match">
         <Navbar isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} />
         <Routes>
-          <Route exact path="pawwfect-match" element={<Home />} />
+          <Route exact path="/pawwfect-match" element={<Home />} />
           <Route
             path="/signin"
             element={
