@@ -24,7 +24,7 @@ function App() {
           />
           <Route
             exact
-            path="/pawwfect-match/signin"
+            path="/signin"
             element={
               <SignInSide
                 isLoggedIn={isLoggedIn}
@@ -32,11 +32,7 @@ function App() {
               />
             }
           />
-          <Route
-            exact
-            path="/pawwfect-match/dogsearch"
-            element={<DogsDatabase />}
-          />
+          <Route exact path="/dogsearch" element={<DogsDatabase />} />
           {/* <Route exact path="/pawwfect-match/breedslist" element={<BreedsList />} /> */}
         </Routes>
       </Router>

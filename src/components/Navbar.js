@@ -109,7 +109,7 @@ function Navbar({ isLoggedIn, setIsLoggedIn }) {
               >
                 {isLoggedIn && ( // Check if the user is logged in
                   <MenuItem onClick={handleCloseNavMenu}>
-                    <Link to="/pawwfect-match/dogsearch">
+                    <Link to="/dogsearch">
                       <Typography textAlign="center">Available Dogs</Typography>
                     </Link>
                   </MenuItem>
@@ -138,7 +138,7 @@ function Navbar({ isLoggedIn, setIsLoggedIn }) {
             <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
               {isLoggedIn && ( // Check if the user is logged in
                 <MenuItem onClick={handleCloseNavMenu}>
-                  <Link to="/pawwfect-match/dogsearch">
+                  <Link to="/dogsearch">
                     <Typography textAlign="center" sx={{ color: "#fff" }}>
                       Available Dogs
                     </Typography>
@@ -157,7 +157,7 @@ function Navbar({ isLoggedIn, setIsLoggedIn }) {
                   Log out
                 </Button>
               ) : (
-                <Link to="/pawwfect-match/signin">
+                <Link to="/signin">
                   <Button variant="outlined" sx={{ color: "#fff" }}>
                     Log in
                   </Button>
