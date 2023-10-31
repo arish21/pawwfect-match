@@ -59,7 +59,7 @@ function Navbar({ isLoggedIn, setIsLoggedIn }) {
       <AppBar position="fixed">
         <Container maxWidth="xl">
           <Toolbar disableGutters>
-            <Link to="/" sx={{ textDecoration: "none" }}>
+            <Link to="/pawwfect-match" sx={{ textDecoration: "none" }}>
               <Typography
                 variant="h6"
                 noWrap
@@ -109,7 +109,7 @@ function Navbar({ isLoggedIn, setIsLoggedIn }) {
               >
                 {isLoggedIn && ( // Check if the user is logged in
                   <MenuItem onClick={handleCloseNavMenu}>
-                    <Link to="/dogsearch">
+                    <Link to="/pawwfect-match/dogsearch">
                       <Typography textAlign="center">Available Dogs</Typography>
                     </Link>
                   </MenuItem>
@@ -138,7 +138,7 @@ function Navbar({ isLoggedIn, setIsLoggedIn }) {
             <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
               {isLoggedIn && ( // Check if the user is logged in
                 <MenuItem onClick={handleCloseNavMenu}>
-                  <Link to="/dogsearch">
+                  <Link to="/pawwfect-match/dogsearch">
                     <Typography textAlign="center" sx={{ color: "#fff" }}>
                       Available Dogs
                     </Typography>
@@ -157,7 +157,7 @@ function Navbar({ isLoggedIn, setIsLoggedIn }) {
                   Log out
                 </Button>
               ) : (
-                <Link to="/signin">
+                <Link to="/pawwfect-match/signin">
                   <Button variant="outlined" sx={{ color: "#fff" }}>
                     Log in
                   </Button>

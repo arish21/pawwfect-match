@@ -17,9 +17,10 @@ function App() {
       <Router>
         <Navbar isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} />
         <Routes>
-          <Route exact path="/" element={<Home />} />
+          <Route exact path="/pawwfect-match" element={<Home />} />
           <Route
-            path="/signin"
+            exact
+            path="/pawwfect-match/signin"
             element={
               <SignInSide
                 isLoggedIn={isLoggedIn}
@@ -27,8 +28,12 @@ function App() {
               />
             }
           />
-          <Route path="/dogsearch" element={<DogsDatabase />} />
-          <Route path="/breedslist" element={<BreedsList />} />
+          <Route
+            exact
+            path="/pawwfect-match/dogsearch"
+            element={<DogsDatabase />}
+          />
+          {/* <Route exact path="/pawwfect-match/breedslist" element={<BreedsList />} /> */}
         </Routes>
       </Router>
     </NotificationProvider>

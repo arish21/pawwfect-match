@@ -71,7 +71,7 @@ const Home = () => {
               {" "}
               Login now to Explore!
             </Typography>
-            <Link to="/signin">
+            <Link to="/pawwfect-match/signin">
               <Typography
                 component="h1"
                 variant="h4"
