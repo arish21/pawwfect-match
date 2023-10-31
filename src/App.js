@@ -17,11 +17,7 @@ function App() {
       <Router>
         <Navbar isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} />
         <Routes>
-          <Route
-            exact
-            path="https://arish21.github.io/pawwfect-match"
-            element={<Home />}
-          />
+          <Route exact path="/" element={<Home />} />
           <Route
             exact
             path="/signin"
