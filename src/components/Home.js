@@ -7,7 +7,7 @@ import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import { Link } from "react-router-dom";
 
-const Home = () => {
+const Home = ({ isLoggedIn }) => {
   return (
     <div>
       <Box
@@ -59,39 +59,42 @@ const Home = () => {
               furry friend come true. Explore our database of adorable dogs and
               start your joyful journey today!
             </Typography>
-            <Typography
-              component="h1"
-              variant="h4"
-              sx={{
-                display: "flex",
-                marginLeft: "8rem",
-                marginTop: "2rem",
-              }}
-            >
-              {" "}
-              Login now to Explore!
-            </Typography>
-            <Link to="/signin">
-              <Typography
-                component="h1"
-                variant="h4"
-                sx={{
-                  display: "flex",
-                  marginLeft: "8rem",
-                  marginTop: "1rem",
-                }}
-              >
-                <Button
-                  variant="contained"
+            {!isLoggedIn && (
+              <div>
+                <Typography
+                  component="h1"
+                  variant="h4"
                   sx={{
-                    padding: "0.4rem 2rem 0.4rem 2rem",
-                    fontWeight: "bold",
+                    display: "flex",
+                    marginLeft: "8rem",
+                    marginTop: "2rem",
                   }}
                 >
-                  Log in
-                </Button>
-              </Typography>
-            </Link>
+                  Login now to Explore!
+                </Typography>
+                <Link to="/signin">
+                  <Typography
+                    component="h1"
+                    variant="h4"
+                    sx={{
+                      display: "flex",
+                      marginLeft: "8rem",
+                      marginTop: "1rem",
+                    }}
+                  >
+                    <Button
+                      variant="contained"
+                      sx={{
+                        padding: "0.4rem 2rem 0.4rem 2rem",
+                        fontWeight: "bold",
+                      }}
+                    >
+                      Log in
+                    </Button>
+                  </Typography>
+                </Link>
+              </div>
+            )}
           </Grid>
 
           <Grid
