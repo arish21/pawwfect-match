@@ -16,22 +16,20 @@ function App() {
     <NotificationProvider>
       <Router>
         <Navbar isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} />
-        <div>
-          <Routes>
-            <Route exact path="/" element={<Home />} />
-            <Route
-              path="/signin"
-              element={
-                <SignInSide
-                  isLoggedIn={isLoggedIn}
-                  setIsLoggedIn={setIsLoggedIn}
-                />
-              }
-            />
-            <Route path="/dogsearch" element={<DogsDatabase />} />
-            <Route path="/breedslist" element={<BreedsList />} />
-          </Routes>
-        </div>
+        <Routes>
+          <Route exact path="/" element={<Home />} />
+          <Route
+            path="/signin"
+            element={
+              <SignInSide
+                isLoggedIn={isLoggedIn}
+                setIsLoggedIn={setIsLoggedIn}
+              />
+            }
+          />
+          <Route path="/dogsearch" element={<DogsDatabase />} />
+          <Route path="/breedslist" element={<BreedsList />} />
+        </Routes>
       </Router>
     </NotificationProvider>
   );
