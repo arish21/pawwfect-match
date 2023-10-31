@@ -4,6 +4,8 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 # NOTE: This Website is not optimized to view in Mobile browsers.
 
+## Please check instructions.text located in 'src' folder to install dependencies before running locally. 
+
 ## Available Scripts
 
 In the project directory, you can run:
