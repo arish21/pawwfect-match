@@ -1,24 +1,39 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import DogsDatabase from "./components/DogsDatabase";
+import Home from "./components/Home";
+import Navbar from "./components/Navbar";
+import SignInSide from "./components/SignInSide";
+import { useState } from "react";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { NotificationProvider } from "./components/NotificationContext";
+import BreedsList from "./components/BreedsList";
 
 function App() {
+  const [isLoggedIn, setIsLoggedIn] = useState(
+    localStorage.getItem("isLoggedIn") === "true"
+  );
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <NotificationProvider>
+      <Router>
+        <Navbar isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} />
+        <div>
+          <Routes>
+            <Route exact path="/" element={<Home />} />
+            <Route
+              path="/signin"
+              element={
+                <SignInSide
+                  isLoggedIn={isLoggedIn}
+                  setIsLoggedIn={setIsLoggedIn}
+                />
+              }
+            />
+            <Route path="/dogsearch" element={<DogsDatabase />} />
+            <Route path="/breedslist" element={<BreedsList />} />
+          </Routes>
+        </div>
+      </Router>
+    </NotificationProvider>
   );
 }
 

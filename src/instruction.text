@@ -1,0 +1,8 @@
+To run this project locally you need the following packages installed: 
+1. npm
+2. react-dom
+3. react-router-dom
+4. @mui/material
+5. @mui/icons-material 
+6. @emotion/styled
+7. @emotion/react
