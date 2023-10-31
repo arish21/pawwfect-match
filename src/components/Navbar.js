@@ -167,7 +167,6 @@ function Navbar({ isLoggedIn, setIsLoggedIn }) {
           </Toolbar>
         </Container>
       </AppBar>
-      <Home />
     </>
   );
 }
